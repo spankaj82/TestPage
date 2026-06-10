@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R2Demo2 Chat Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 60px auto; padding: 20px; background: #f4f6f9; }
+        .card { background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #0070D2; }
+        p { color: #444; line-height: 1.6; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; border-radius: 4px; margin-top: 20px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>R2Demo2 Support</h1>
+        <p>Welcome to R2Demo2 customer support. Our team is available Monday to Friday, 9am – 6pm SGT.</p>
+        <p>Click the chat icon in the bottom-right corner to start a conversation with our support team.</p>
+        <div class="note">
+            <strong>Test page</strong> — This page is used to verify the Embedded Service Chat widget. Not for production use.
+        </div>
+    </div>
+
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://ra1777353193493--r2sand2.sandbox.my.salesforce.com',
+			'https://ra1777353193493--r2sand2.sandbox.my.site.com/ESWSDOMessagingforWeb1777360470598vforce',
+			gslbBaseURL,
+			'00DDy00000090fg',
+			'R2Demo2_Chat',
+			{
+				baseLiveAgentContentURL: 'https://c.la3-c1cs-ia6.salesforceliveagent.com/content',
+				deploymentId: '572Hn0000004ual',
+				buttonId: '573Hn0000004uvK',
+				baseLiveAgentURL: 'https://d.la3-c1cs-ia6.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IDy000000CcJVMA0_19e2b9da393',
+				isOfflineSupportEnabled: true
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://ra1777353193493--r2sand2.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+  
+  
+     
+</body>
+</html>
+
