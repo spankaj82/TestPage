@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R2Demo2 Chat Test - GIT</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 60px auto; padding: 20px; background: #f4f6f9; }
+        .card { background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { color: #0070D2; }
+        p { color: #444; line-height: 1.6; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; border-radius: 4px; margin-top: 20px; font-size: 14px; }
+    </style>
+</head>
+<body>
+  <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DgL00000P8hML',
+				'PS_Omnichannel',
+				'https://orgfarm-abdf72041c-dev-ed.develop.my.site.com/ESWPSOmnichannel1781610309660',
+				{
+					scrt2URL: 'https://orgfarm-abdf72041c-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-abdf72041c-dev-ed.develop.my.site.com/ESWPSOmnichannel1781610309660/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+     
+</body>
+</html>
+
